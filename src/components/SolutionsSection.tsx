@@ -2,6 +2,7 @@
 import React from "react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const solutions = [
   {
@@ -47,25 +48,29 @@ const SolutionsSection = () => {
     <section className="mb-8">
       <div className="container-padding">
         <h2 className="text-xl font-semibold text-unico-light mb-4">Soluções e Produtos</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {solutions.map((solution) => (
-            <Card key={solution.id} className="bg-card border border-unico-blue/20 rounded-xl overflow-hidden h-[180px] flex flex-col">
-              <CardContent className="p-4 flex-1">
-                <div className="text-2xl mb-2">{solution.icon}</div>
-                <h3 className="text-md font-medium text-unico-light">{solution.title}</h3>
-                <p className="text-xs text-unico-silver mt-1 line-clamp-2">{solution.description}</p>
-              </CardContent>
-              <CardFooter className="p-3 pt-0 border-t border-unico-blue/10">
-                <Button 
-                  className="w-full text-xs h-8 bg-unico-blue/20 hover:bg-unico-blue text-unico-light" 
-                  variant="secondary"
-                >
-                  Contratar
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
+        <Carousel className="w-full">
+          <CarouselContent>
+            {solutions.map((solution) => (
+              <CarouselItem key={solution.id} className="md:basis-1/3 lg:basis-1/4">
+                <Card className="bg-card border border-unico-blue/20 rounded-xl overflow-hidden h-[180px] flex flex-col m-1">
+                  <CardContent className="p-4 flex-1">
+                    <div className="text-2xl mb-2">{solution.icon}</div>
+                    <h3 className="text-md font-medium text-unico-light">{solution.title}</h3>
+                    <p className="text-xs text-unico-silver mt-1 line-clamp-2">{solution.description}</p>
+                  </CardContent>
+                  <CardFooter className="p-3 pt-0 border-t border-unico-blue/10">
+                    <Button 
+                      className="w-full text-xs h-8 bg-unico-blue/20 hover:bg-unico-blue text-unico-light" 
+                      variant="secondary"
+                    >
+                      Contratar
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
