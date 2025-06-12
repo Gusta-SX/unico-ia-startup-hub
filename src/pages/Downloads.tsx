@@ -1,11 +1,10 @@
 
 import React from "react";
-import Header from "@/components/Header";
-import BottomNavigation from "@/components/BottomNavigation";
 import { Download, FileType, FileText, FileImage, File, Play } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Progress } from "@/components/ui/progress";
+import ResponsiveLayout from "@/components/ResponsiveLayout";
 
 const downloadItems = [
   {
@@ -57,9 +56,8 @@ const downloadItems = [
 
 const Downloads = () => {
   return (
-    <div className="min-h-screen bg-unico-dark">
-      <Header />
-      <div className="container mx-auto pt-24 pb-20">
+    <ResponsiveLayout>
+      <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center justify-center mb-8">
           <Download className="h-16 w-16 text-unico-blue mb-4" />
           <h1 className="text-2xl font-bold text-unico-light">Downloads</h1>
@@ -68,7 +66,7 @@ const Downloads = () => {
           </p>
         </div>
 
-        <ScrollArea className="h-[60vh] w-full px-4">
+        <ScrollArea className="h-[60vh] w-full">
           <div className="space-y-4">
             {downloadItems.map((item) => (
               <Card key={item.id} className="bg-unico-darkblue/60 border border-unico-blue/20 rounded-xl overflow-hidden">
@@ -100,8 +98,7 @@ const Downloads = () => {
           </div>
         </ScrollArea>
       </div>
-      <BottomNavigation />
-    </div>
+    </ResponsiveLayout>
   );
 };
 

@@ -1,12 +1,11 @@
 
 import React from "react";
-import Header from "@/components/Header";
-import BottomNavigation from "@/components/BottomNavigation";
 import { Users, Heart, MessageCircle, Share2, Calendar } from "lucide-react";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import ResponsiveLayout from "@/components/ResponsiveLayout";
 
 const communityPosts = [
   {
@@ -63,9 +62,8 @@ const communityPosts = [
 
 const Community = () => {
   return (
-    <div className="min-h-screen bg-unico-dark">
-      <Header />
-      <div className="container mx-auto pt-24 pb-20">
+    <ResponsiveLayout>
+      <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center justify-center mb-8">
           <Users className="h-16 w-16 text-unico-blue mb-4" />
           <h1 className="text-2xl font-bold text-unico-light">Comunidade</h1>
@@ -74,7 +72,7 @@ const Community = () => {
           </p>
         </div>
 
-        <div className="px-4 mb-4">
+        <div className="mb-4">
           <Card className="bg-unico-darkblue/60 border border-unico-blue/20 rounded-xl overflow-hidden">
             <CardContent className="p-3">
               <div className="flex items-center space-x-2">
@@ -89,7 +87,7 @@ const Community = () => {
           </Card>
         </div>
 
-        <ScrollArea className="h-[55vh] w-full px-4">
+        <ScrollArea className="h-[55vh] w-full">
           <div className="space-y-4">
             {communityPosts.map((post) => (
               <Card key={post.id} className="bg-unico-darkblue/60 border border-unico-blue/20 rounded-xl overflow-hidden">
@@ -145,8 +143,7 @@ const Community = () => {
           </div>
         </ScrollArea>
       </div>
-      <BottomNavigation />
-    </div>
+    </ResponsiveLayout>
   );
 };
 
