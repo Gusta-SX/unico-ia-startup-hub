@@ -1,16 +1,14 @@
 
 import React from "react";
-import Header from "@/components/Header";
-import BottomNavigation from "@/components/BottomNavigation";
 import { User, Settings, Calendar, ArrowRight, Trophy, BookOpen, Clock } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import ResponsiveLayout from "@/components/ResponsiveLayout";
 
 const Profile = () => {
   return (
-    <div className="min-h-screen bg-unico-dark">
-      <Header />
-      <div className="container mx-auto pt-20 pb-20 px-4">
+    <ResponsiveLayout>
+      <div className="container mx-auto px-4 py-8">
         {/* Hero Section - Responsivo */}
         <div className="flex flex-col items-center mb-8 text-center">
           <Avatar className="h-20 w-20 md:h-24 md:w-24 mb-4 ring-2 ring-unico-blue/30">
@@ -128,8 +126,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-      <BottomNavigation />
-    </div>
+    </ResponsiveLayout>
   );
 };
 

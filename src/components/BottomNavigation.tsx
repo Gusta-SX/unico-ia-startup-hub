@@ -36,7 +36,8 @@ const BottomNavigation = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-card border-t border-unico-blue/20 glass-effect">
+    // Apenas aparece no mobile (md:hidden)
+    <div className="fixed bottom-0 left-0 z-50 w-full h-16 bg-card border-t border-unico-blue/20 glass-effect md:hidden">
       <div className="grid h-full grid-cols-5">
         {navItems.map((item) => (
           <Link
