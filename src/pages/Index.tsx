@@ -9,7 +9,7 @@ import ResponsiveLayout from "@/components/ResponsiveLayout";
 const Index = () => {
   return (
     <ResponsiveLayout>
-      <div className="container mx-auto px-4">
+      <div className="w-full max-w-full overflow-x-hidden">
         <CampaignCarousel />
         <FreeAccessSection />
         <SolutionsSection />

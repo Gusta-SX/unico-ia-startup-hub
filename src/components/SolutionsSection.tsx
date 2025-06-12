@@ -74,23 +74,23 @@ const SolutionsSection = () => {
 
   return (
     <section className="mb-8">
-      <div className="container-padding">
+      <div className="px-4">
         <h2 className="text-xl font-semibold text-unico-light mb-4">Soluções e Produtos</h2>
         
-        <Carousel className="w-full">
+        <Carousel className="w-full max-w-full">
           <div className="relative">
-            <CarouselContent className="py-4">
+            <CarouselContent className="py-2 -ml-2 md:-ml-4">
               {solutions.map((solution) => (
-                <CarouselItem key={solution.id} className="md:basis-1/3 lg:basis-1/4">
-                  <Card className="bg-card border border-unico-blue/20 rounded-xl overflow-hidden h-[180px] flex flex-col m-1 hover:border-unico-blue/40 transition-all duration-300">
-                    <CardContent className="p-4 flex-1">
-                      <div className="text-2xl mb-2">{solution.icon}</div>
-                      <h3 className="text-md font-medium text-unico-light">{solution.title}</h3>
+                <CarouselItem key={solution.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 lg:basis-1/4">
+                  <Card className="bg-card border border-unico-blue/20 rounded-xl overflow-hidden h-[160px] sm:h-[180px] flex flex-col hover:border-unico-blue/40 transition-all duration-300">
+                    <CardContent className="p-3 md:p-4 flex-1 min-h-0">
+                      <div className="text-xl md:text-2xl mb-2">{solution.icon}</div>
+                      <h3 className="text-sm md:text-md font-medium text-unico-light line-clamp-2">{solution.title}</h3>
                       <p className="text-xs text-unico-silver mt-1 line-clamp-2">{solution.description}</p>
                     </CardContent>
-                    <CardFooter className="p-3 pt-0 border-t border-unico-blue/10">
+                    <CardFooter className="p-2 md:p-3 pt-0 border-t border-unico-blue/10">
                       <Button 
-                        className="w-full text-xs h-8 bg-unico-blue/20 hover:bg-unico-blue text-unico-light" 
+                        className="w-full text-xs h-7 md:h-8 bg-unico-blue/20 hover:bg-unico-blue text-unico-light" 
                         variant="secondary"
                         onClick={() => openModal(solution.id)}
                       >
@@ -122,7 +122,7 @@ const SolutionsSection = () => {
 
       {/* Solution Details Modal */}
       <Dialog open={!!selectedSolution} onOpenChange={(open) => !open && setSelectedSolution(null)}>
-        <DialogContent className="bg-card border border-unico-blue/20 text-unico-light max-w-md">
+        <DialogContent className="bg-card border border-unico-blue/20 text-unico-light max-w-md mx-4">
           {currentSolution && (
             <>
               <DialogHeader>

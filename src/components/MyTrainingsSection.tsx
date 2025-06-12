@@ -33,24 +33,24 @@ const trainings = [
 const MyTrainingsSection = () => {
   return (
     <section className="mb-24">
-      <div className="container-padding">
+      <div className="px-4">
         <h2 className="text-xl font-semibold text-unico-light mb-4">Meus Treinamentos</h2>
         
-        <Carousel className="w-full">
+        <Carousel className="w-full max-w-full">
           <div className="relative">
-            <CarouselContent className="py-4">
+            <CarouselContent className="py-2 -ml-2 md:-ml-4">
               {trainings.map((training) => (
-                <CarouselItem key={training.id} className="md:basis-1/2 lg:basis-1/3">
-                  <Card className="bg-card border border-unico-blue/20 hover:border-unico-blue/40 rounded-xl overflow-hidden m-1 transition-all duration-300">
+                <CarouselItem key={training.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <Card className="bg-card border border-unico-blue/20 hover:border-unico-blue/40 rounded-xl overflow-hidden transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="flex items-center p-3">
-                        <Avatar className="h-12 w-12 rounded-lg border border-unico-blue/20">
+                        <Avatar className="h-10 w-10 md:h-12 md:w-12 rounded-lg border border-unico-blue/20 flex-shrink-0">
                           <AvatarImage src={training.image} alt={training.instructor} className="object-cover" />
-                          <AvatarFallback className="bg-unico-blue/20 text-unico-light">{training.instructor.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                          <AvatarFallback className="bg-unico-blue/20 text-unico-light text-xs">{training.instructor.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                         </Avatar>
-                        <div className="ml-3 flex-1">
-                          <h3 className="text-sm font-medium text-unico-light">{training.title}</h3>
-                          <p className="text-xs text-unico-silver mt-1">{training.instructor}</p>
+                        <div className="ml-3 flex-1 min-w-0">
+                          <h3 className="text-sm font-medium text-unico-light line-clamp-2">{training.title}</h3>
+                          <p className="text-xs text-unico-silver mt-1 truncate">{training.instructor}</p>
                           <div className="mt-2">
                             <div className="flex items-center justify-between mb-1">
                               <span className="text-xs text-unico-silver">Progresso</span>
