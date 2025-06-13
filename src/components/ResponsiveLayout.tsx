@@ -1,3 +1,4 @@
+
 import React from "react";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import AppSidebar from "./AppSidebar";
@@ -17,7 +18,7 @@ const ResponsiveLayout = ({
         </div>
         
         {/* Main Content */}
-        <SidebarInset className="flex-1">
+        <SidebarInset className="flex-1 max-w-screen">
           <Header />
           <main className="pt-16 pb-4 md:pb-4 min-h-screen max-w-full ">
             {children}
