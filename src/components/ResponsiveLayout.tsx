@@ -4,13 +4,16 @@ import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import AppSidebar from "./AppSidebar";
 import Header from "./Header";
 import BottomNavigation from "./BottomNavigation";
+
 interface ResponsiveLayoutProps {
   children: React.ReactNode;
 }
+
 const ResponsiveLayout = ({
   children
 }: ResponsiveLayoutProps) => {
-  return <SidebarProvider>
+  return (
+    <SidebarProvider>
       <div className="min-h-screen flex w-full bg-unico-dark">
         {/* Sidebar - apenas no desktop */}
         <div className="hidden lg:block">
@@ -28,6 +31,8 @@ const ResponsiveLayout = ({
         {/* Bottom Navigation - apenas no mobile */}
         <BottomNavigation />
       </div>
-    </SidebarProvider>;
+    </SidebarProvider>
+  );
 };
+
 export default ResponsiveLayout;
